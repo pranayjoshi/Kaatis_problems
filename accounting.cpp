@@ -6,50 +6,37 @@
 
 using namespace std;
 
-// int minRoomsNeeded(int n, vector<pair<int, int>>& preferences) {
-//     sort(preferences.begin(), preferences.end());
-
-//     int rooms = 0;
-//     int currentRoomEnd = -1;
-
-//     for (const auto& pref : preferences) {
-//         if (pref.first > currentRoomEnd) {
-//             currentRoomEnd = pref.second;
-//             rooms++;
-//         } else {
-//             currentRoomEnd = min(currentRoomEnd, pref.second);
-//         }
-//     }
-
-//     return rooms;
-// }
-
-int main() {
+int main()
+{
     int n, q;
     cin >> n >> q;
 
     unordered_map<int, int> preferences;
-    int restart = -1;
-    for (int i = 0; i < q; ++i) {
+    int restart = 0;
+    for (int i = 0; i < q; ++i)
+    {
         string command;
         int val;
         cin >> command >> val;
-        if (command == "PRINT"){
-            // if val is a key in preferences, print print val value
-            // else print restart
-            if (find(preferences.begin(), preferences.end(), val) != preferences.end()) {
+        if (command == "PRINT")
+        {
+            if (preferences.find(val) != preferences.end())
+            {
                 cout << preferences[val] << endl;
-            } else {
+            }
+            else
+            {
                 cout << restart << endl;
             }
-            cout << restart << endl;
             continue;
         }
-        if (command == "RESTART") {
+        if (command == "RESTART")
+        {
             restart = val;
             preferences.clear();
-        } 
-        else if (command == "SET") {
+        }
+        else if (command == "SET")
+        {
             int val2;
             cin >> val2;
             preferences[val] = val2;
