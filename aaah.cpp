@@ -6,7 +6,7 @@ int main() {
     string s, s2;
     cin >> s;
     cin >> s2;
-    if (s.size() > s2.size()) {
+    if (s.size() >= s2.size()) {
         cout << "go" << endl;
         return 0;
     }
