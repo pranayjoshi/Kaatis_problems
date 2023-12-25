@@ -3,14 +3,16 @@
 #include <sstream>
 #include <vector>
 #include <climits>
+#include <algorithm>
 #include <iterator>
 using namespace std;
 
 int main()
 {
     int n;
+    cin >> n;
     vector<int> lst(n);
-    int s;
+    int s=0;
     for(int i = 0; i < n; i++) {
         cin >> lst[i];
         s+=lst[i];
