@@ -6,15 +6,6 @@
 #include <iterator>
 using namespace std;
 
-bool isVisited(vector<int>& visited, int s){
-    for (int i = 0; i < visited.size(); i++){
-        if (visited[i] == s){
-            return true;
-        }
-    }
-    return false;
-}
-
 int main()
 {
     int n, s, m;
@@ -25,6 +16,7 @@ int main()
     }
     int hops = 0;
     string status = "";
+    s--;
     vector<int> visited(n,0);
     while (true){
         if (s < 0){
@@ -35,7 +27,7 @@ int main()
             status = "right";
             break;
         }
-        if (isVisited(visited, s)){
+        if (visited[s] > 0){
             status = "cycle";
             break;
         }
