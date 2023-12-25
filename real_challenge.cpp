@@ -4,8 +4,9 @@
 using namespace std;
 
 int main() {
-    int num;    
+    double num;    
     cin >> num;
-    int sqrtNum = sqrt(num);
-    cout << 4 * sqrtNum << endl;
+    double sqrtNum = sqrt(num);
+    double fsq = 4 * sqrtNum;
+    cout << fsq << endl;
 }
