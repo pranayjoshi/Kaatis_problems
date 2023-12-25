@@ -1,13 +1,16 @@
 rst = {}
 while True:
-    lst = list(map(input().split()))
+    lst = list(input().split())
     if (lst[0] == "clear"):
-        break
+        rst.clear()
     elif (lst[0] == "def"):
         rst[lst[1]] = int(lst[2])
     elif (lst[0] == "calc"):
-        res = 0
-        for i in range(1, len(lst) - 1, 2):
+        if lst[1] not in rst:
+            print(" ".join(lst[1:]), "unknown")
+            continue
+        res = rst[lst[1]]
+        for i in range(3, len(lst) - 1, 2):
             if (lst[i] not in rst):
                 res = "unknown"
                 break
@@ -16,12 +19,5 @@ while True:
             elif (lst[i - 1] == "-"):
                 res -= rst[lst[i]]
         if (res != "unknown"):
-            for i in rst:
-                if (rst[i] == res):
-                    res = i
-                    break
-                else:
-                    res = "unknown"
+            res = next((key for key, val in rst.items() if val == res), "unknown")
         print(" ".join(lst[1:]), res)
-    
-
