@@ -2,6 +2,7 @@
 #include <unordered_map>
 #include <sstream>
 #include <vector>
+#include <climits>
 
 int main() {
     std::unordered_map<std::string, int> rst;
