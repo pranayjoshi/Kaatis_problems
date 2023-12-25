@@ -7,10 +7,11 @@
 using namespace std;
 
 int main()
-{
-    int n1, n2, n3, n4, n5, n6,s, q;
-    cin >> n1 >> q;
-    }
+{   
+    vector<int> n(6,0);
+    int s, q;
+    cin >> n[0] >> n[1] >> n[2] >> n[3] >> n[4] >> n[5] >> s >> q;
+    sort(n.begin(), n.end());
 
     return 0;
 }
