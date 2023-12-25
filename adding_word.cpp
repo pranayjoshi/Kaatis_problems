@@ -3,21 +3,22 @@
 #include <sstream>
 #include <vector>
 #include <climits>
+using namespace std;
 
 int main() {
-    std::unordered_map<std::string, int> rst;
-    std::string line;
-    while (std::getline(std::cin, line)) {
-        std::istringstream iss(line);
-        std::vector<std::string> lst((std::istream_iterator<std::string>(iss)), std::istream_iterator<std::string>());
+    unordered_map<string, int> rst;
+    string line;
+    while (getline(cin, line)) {
+        istringstream iss(line);
+        vector<string> lst((istream_iterator<string>(iss)), istream_iterator<string>());
 
         if (lst[0] == "clear") {
             rst.clear();
         } else if (lst[0] == "def") {
-            rst[lst[1]] = std::stoi(lst[2]);
+            rst[lst[1]] = stoi(lst[2]);
         } else if (lst[0] == "calc") {
             if (rst.find(lst[1]) == rst.end()) {
-                std::cout << line.substr(5) << " unknown\n";
+                cout << line.substr(5) << " unknown\n";
                 continue;
             }
             int res = rst[lst[1]];
@@ -32,14 +33,14 @@ int main() {
                     res -= rst[lst[i]];
                 }
             }
-            std::string res_str = "unknown";
+            string res_str = "unknown";
             for (const auto& pair : rst) {
                 if (pair.second == res) {
                     res_str = pair.first;
                     break;
                 }
             }
-            std::cout << line.substr(5) << " " << res_str << "\n";
+            cout << line.substr(5) << " " << res_str << "\n";
         }
     }
     return 0;
