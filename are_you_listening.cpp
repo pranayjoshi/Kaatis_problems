@@ -16,5 +16,10 @@ int main() {
         pq.push_back(distance - r);
     }
     sort(pq.begin(), pq.end());
+    if (pq[2] < 0)
+    {
+        cout << 0 << endl;
+        return 0;
+    }
     cout << pq[2] << endl;
 }
