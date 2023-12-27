@@ -1,9 +1,8 @@
 #include <iostream>
+#include <vector>
+#include <algorithm>
 
 using namespace std;
-
-
-
 
 int getIndex(vector<int> v, int K)
 {
@@ -18,23 +17,24 @@ int getIndex(vector<int> v, int K)
 }
 
 vector<int> removeAndInsert(vector<int> v, int a, int b) {
-    int index = getIndex(v, a);
-    v.erase(v.begin() + index);
-    v.insert(v.begin() + index, b);
+    int x = v[a];
+    v.erase(v.begin() + a);
+    v.insert(v.begin() + b, x);
     return v;
 }
 
 int main(){
     int n, m;
+    cin >> n >> m;
     vector<int> last(n,0);
-    for(int i = 0; i < n; i++) {
-        last[i] = i;
+    for(int i = 1; i <= n; i++) {
+        last[i-1] = i;
     }
     for(int i = 0; i < m; i++) {
         int a, b;
         cin >> a >> b;
         if (getIndex(last, a) > getIndex(last, b)) {
-            last = removeAndInsert(last, getIndex(last, a), getIndex(last, b));
+            last = removeAndInsert(last, getIndex(last, b), getIndex(last, a));
         }
     }
     for(int i = 0; i < n; i++) {
