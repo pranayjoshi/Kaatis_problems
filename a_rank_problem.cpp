@@ -2,6 +2,9 @@
 
 using namespace std;
 
+
+vector<int>  
+
 int main(){
     int n, m;
     vector<int> last(n,0);
