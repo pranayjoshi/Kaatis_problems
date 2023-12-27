@@ -1,0 +1,5 @@
+a = int(input())
+s = list(input().split())
+s2 = input()
+s2 = list(s2)
+print(s2)
