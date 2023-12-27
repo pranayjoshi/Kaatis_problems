@@ -3,12 +3,7 @@
 using namespace std;
 
 
-vector<int> removeAndInsert(vector<int> v, int a, int b) {
-    int index = getIndex(v, a);
-    v.erase(v.begin() + index);
-    v.insert(v.begin() + index, b);
-    return v;
-}
+
 
 int getIndex(vector<int> v, int K)
 {
@@ -20,6 +15,13 @@ int getIndex(vector<int> v, int K)
     else {
         return -1;
     }
+}
+
+vector<int> removeAndInsert(vector<int> v, int a, int b) {
+    int index = getIndex(v, a);
+    v.erase(v.begin() + index);
+    v.insert(v.begin() + index, b);
+    return v;
 }
 
 int main(){
@@ -36,7 +38,7 @@ int main(){
         }
     }
     for(int i = 0; i < n; i++) {
-        cout << "T" << last[i] << endl;
+        cout << "T" << last[i] << " ";
     }
     return 0;
 }
