@@ -13,16 +13,17 @@ int main() {
     }
 
     sort(prices.begin(), prices.end());
-    int price = prices[0];
-    int counter = 1;
-    for (int i = 1; i < n - 1; i++) {
-        if (price > x) {
+
+    int counter = 0;
+    int total_price = 0;
+    for (int i = 0; i < n; i++) {
+        if (total_price + prices[i] > x) {
             break;
         }
-        price += prices[i];
+        if (prices[i] != prices[i-1]) total_price += prices[i];
         counter++;
     }
-
+    if (counter == 0) return 1;
     cout << counter << endl;
 
     return 0;
