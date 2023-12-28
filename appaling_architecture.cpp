@@ -17,13 +17,15 @@ int main() {
     int leftmost = w;
     int rightmost = 0;
 
-    for (int i = 0; i < h; i++) {
-        for (int j = 0; j < w; j++) {
+    for (int i = h - 1; i >= 0; i--) {
+        for (int j = w - 1; j >= 0; j--) {
             if (grid[i][j] != '.') {
                 total_mass++;
                 total_moment += j;
-                leftmost = min(leftmost, j);
-                rightmost = max(rightmost, j);
+                if (i == 0) {
+                    leftmost = min(leftmost, j);
+                    rightmost = max(rightmost, j);
+                }
             }
         }
     }
