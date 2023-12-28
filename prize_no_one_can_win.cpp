@@ -1,30 +1,37 @@
-#include <iostream>
-#include <vector>
-#include <algorithm>
+#include <bits/stdc++.h>
 
 using namespace std;
 
-int main() {
-    int n, x;
-    cin >> n >> x;
-    vector<int> prices(n);
-    for (int i = 0; i < n; i++) {
-        cin >> prices[i];
+#define ar array
+#define ll long long
+
+void solve() {
+    int n; ll x;
+    cin>>n>>x;
+    ll arr[n];
+    for(int i=0;i<n;i++){
+        cin>>arr[i];
     }
-
-    sort(prices.begin(), prices.end());
-
-    int counter = 0;
-    int total_price = 0;
-    for (int i = 0; i < n; i++) {
-        if (total_price + prices[i] > x) {
+    sort(arr,arr+n);
+    int i=n-1;
+    while(i>0){
+        if(arr[i]+arr[i-1]>x){
+            i--;
+        }else{
             break;
         }
-        if (prices[i] != prices[i-1]) total_price += prices[i];
-        counter++;
     }
-    if (counter == 0) return 1;
-    cout << counter << endl;
+    cout<<(i+1)<<endl;
+}
 
-    return 0;
+int main() {
+    ios_base::sync_with_stdio(0);
+    cin.tie(0); cout.tie(0);
+
+    int tc = 1;
+    // cin >> tc;
+    for (int t = 1; t <= tc; t++) {
+        // cout << "Case #" << t  << ": ";
+        solve();
+    }
 }
