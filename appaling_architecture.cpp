@@ -22,10 +22,8 @@ int main() {
             if (grid[i][j] != '.') {
                 total_mass++;
                 total_moment += j;
-                if (i == 0) {
-                    leftmost = min(leftmost, j);
-                    rightmost = max(rightmost, j);
-                }
+                leftmost += min(leftmost, j);
+                rightmost += max(rightmost, j);
             }
         }
     }
