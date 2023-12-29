@@ -8,7 +8,8 @@ def nextCube(cube, cylinder):
     else: return "impossible"
 
 num_blocks = int(input())
-blocks = [list(map(int, input().split())) if i != 0 else input().split() for i in range(num_blocks)]
+blocks = [input().split() for _ in range(num_blocks)]
+blocks = [[block[0], int(block[1])] for block in blocks]
 cube_blocks = [block for block in blocks if block[0] == 'cube']
 cylinder_blocks = [block for block in blocks if block[0] == 'cylinder']
 cube_blocks.sort(key=lambda x: x[1], reverse=True)
