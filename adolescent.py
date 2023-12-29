@@ -1,9 +1,9 @@
 import math
 
 def nextCube(cube, cylinder):
-    if (cube[1] > cylinder[1]*2):
+    if (cube[1] >= cylinder[1]*2):
         return "cube"
-    elif (cylinder[1] > cube[1] * 0.5 * math.sqrt(2)):
+    elif (cylinder[1] >= cube[1] * 0.5 * math.sqrt(2)):
         return "cylinder"
     else: return "impossible"
 
@@ -35,6 +35,7 @@ while (i < len(cube_blocks)):
 while (j < len(cylinder_blocks)):
     tower.append(cylinder_blocks[j])
     j += 1
+tower = reversed(tower)
 if imp == False:
     for block in tower:
         print(f"{block[0]} {block[1]}")
