@@ -1,8 +1,13 @@
+n, a, b = map(int, input().split())
 player = True
-n, a, b= map(int, input().split())
-while n>0:
-    d,m = divmod(n,(b if player else a))
-    n = d+1 if m else d
+
+while n > 0:
+    if (n >= a) if player else (n >= b):
+        n -= a if player else b
+    else:
+        break
+
     player = not player
-if player: print('Alex')
-else: print('Barb')
+
+winner = "Barb" if player else "Alex"
+print(winner)
