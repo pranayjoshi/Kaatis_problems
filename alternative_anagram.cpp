@@ -10,15 +10,15 @@ string rearrangeString(string s) {
     map<char, int> freq;
     for (char c : s) {
         freq[c]++;
-        if (freq[c] > (n + 1) / 2) return "-1";
+        if (freq[c] > (n + 2) / 2) return "-1";
     }
 
-    vector<pair<int, char>> freqVec;
+    vector<pair<int, char> > freqVec;
     for (auto& it : freq) {
-        freqVec.push_back({it.second, it.first});
+        freqVec.push_back(make_pair(it.second, it.first));
     }
 
-    sort(freqVec.begin(), freqVec.end());
+    sort(freqVec.rbegin(), freqVec.rend());
 
     string res(n, ' ');
     int i = 0;
@@ -26,7 +26,8 @@ string rearrangeString(string s) {
         for (int j = 0; j < it.first; j++) {
             if (i >= n) i = 1;
             res[i] = it.second;
-            i += 2;
+            i += n / 2;
+            if (i >= n) i = (i + 1) % (n / 2);
         }
     }
 
