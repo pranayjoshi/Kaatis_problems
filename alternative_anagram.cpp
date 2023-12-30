@@ -7,10 +7,15 @@ using namespace std;
 
 string rearrangeString(string s) {
     int n = s.size();
+    set<string> substrings;
+    for (int i = 0; i <= n - n/2; i++) {
+        substrings.insert(s.substr(i, n/2));
+    }
+    if (substrings.size() == n - n/2 + 1) return s;
     map<char, int> freq;
     for (char c : s) {
         freq[c]++;
-        if (freq[c] > (n + 2) / 2) return "-1";
+        if (freq[c] > (n + 1) / 2) return "-1";
     }
 
     vector<pair<int, char> > freqVec;
