@@ -20,10 +20,13 @@ st = {
   90: "ninety", 91: "ninety-one", 92: "ninety-two", 93: "ninety-three", 94: "ninety-four",
   95: "ninety-five", 96: "ninety-six", 97: "ninety-seven", 98: "ninety-eight", 99: "ninety-nine"
 }
-while True:
-    a = list(input().split())
-    for i in range(len(a)):
-        if a[i].isdigit():
-            s = int(a[i])
-            a[i] = st[s]
-    print(" ".join(a))
+try:
+    while (100):
+        a = list(input().split())
+        for i in range(len(a)):
+            if a[i].isdigit():
+                s = int(a[i])
+                a[i] = st[s]
+        print(" ".join(a))
+except EOFError:
+    pass
