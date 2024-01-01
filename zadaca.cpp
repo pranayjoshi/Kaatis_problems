@@ -5,6 +5,14 @@
 
 using namespace std;
 
+long long multiply(const vector<int>& numbers) {
+    long long result = 1;
+    for (int number : numbers) {
+        result = (result * number) % MOD;
+    }
+    return result;
+}
+
 long long gcd(long long a, long long b) {
     while (b != 0) {
         long long t = b;
@@ -29,15 +37,8 @@ int main() {
         cin >> b_numbers[i];
     }
 
-    long long a = 1;
-    for (int i = 0; i < n; i++) {
-        a = gcd(a * a_numbers[i], MOD);
-    }
-
-    long long b = 1;
-    for (int i = 0; i < m; i++) {
-        b = gcd(b * b_numbers[i], MOD);
-    }
+    long long a = multiply(a_numbers);
+    long long b = multiply(b_numbers);
 
     cout << gcd(a, b) % MOD;
 
