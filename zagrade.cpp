@@ -51,7 +51,7 @@ int main() {
         }
     }
     set<string> results = generate_all(original, pairs);
-    for (string& result : results) {
+    for (const string& result : results) {
         cout << result << endl;
     }
     return 0;
