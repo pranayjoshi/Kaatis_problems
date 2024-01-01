@@ -26,8 +26,8 @@ int main() {
     if (out.empty()) {
         cout << "?" << endl;
     } else {
+        bool q = true;
         for (const auto& i : out) {
-            bool q = true;
             for (const auto& j : l) {
                 if (j[0] == i.back()) {
                     q = false;
