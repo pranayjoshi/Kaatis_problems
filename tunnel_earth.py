@@ -1,6 +1,6 @@
 import math
 
-R = 6371000  # radius of the Earth in meters
+R = 6371009
 
 def to_rad(deg):
     return deg * math.pi / 180
