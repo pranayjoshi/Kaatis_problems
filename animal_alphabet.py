@@ -17,7 +17,7 @@ else:
             if j[0] == i[-1]:
                 q = False
         if q == False:
-            print(i)
+            print(i+"!")
             break
     else:
         print(out[0])
