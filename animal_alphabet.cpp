@@ -1,47 +1,49 @@
-#include <iostream>
-#include <vector>
-#include <string>
+#include <bits/stdc++.h>
+#include <unordered_set>
+#include <unordered_map>
 
 using namespace std;
 
+#define ar array
+#define ll long long
+
+void solve() {
+    string start;
+    cin>>start;
+    int n;
+    cin>>n;
+    unordered_map<char, vector<string> > m;
+    while(n--){
+        string w;
+        cin>>w;
+        m[w[0]].push_back(w);
+    }
+    char start_last=start.back();
+    if(m[start_last].empty()){
+        cout<<"?"<<endl;
+        return;
+    }
+    for(string w:m[start_last]){
+        bool elim=(
+            w.back()==w.front()&&(m[w.back()].size()==1)
+            ||m[w.back()].empty()
+        );
+        if(elim){
+            cout<<w<<"!"<<endl;
+            return;
+        }
+    }
+    cout<<m[start_last][0]<<endl;
+}
+
 int main() {
-    string a;
-    cin >> a;
+    ios_base::sync_with_stdio(0);
+    cin.tie(0); cout.tie(0);
 
-    int t;
-    cin >> t;
-
-    vector<string> l(t);
-    for (int i = 0; i < t; i++) {
-        cin >> l[i];
+    int tc = 1;
+    // cin >> tc;
+    for (int t = 1; t <= tc; t++) {
+        // cout << "Case #" << t  << ": ";
+        solve();
     }
-
-    vector<string> out;
-    for (const auto& i : l) {
-        if (i[0] == a.back()) {
-            out.push_back(i);
-        }
-    }
-
-    if (out.empty()) {
-        cout << "?" << endl;
-    } else {
-        bool q = true;
-        for (const auto& i : out) {
-            for (const auto& j : l) {
-                if (j[0] == i.back()) {
-                    q = false;
-                }
-            }
-            if (!q) {
-                cout << i << "!" << endl;
-                break;
-            }
-        }
-        if (q) {
-            cout << out[0] << endl;
-        }
-    }
-
-    return 0;
 }
