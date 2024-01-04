@@ -3,12 +3,13 @@ while True:
     if l[0] == 0:
         break
     l.pop(0)
-    l.sort(reverse=True)
-    a = 0
-    b = 0
+    total_sum = sum(l)
+    dp = [False] * (total_sum + 1)
+    dp[0] = True
     for i in l:
-        if a > b:
-            b += i
-        else:
-            a += i
-    print(a, b)
+        for j in range(total_sum, i - 1, -1):
+            dp[j] = dp[j] or dp[j - i]
+    for i in range(total_sum // 2, -1, -1):
+        if dp[i]:
+            print(i, total_sum - i)
+            break
