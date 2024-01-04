@@ -13,4 +13,3 @@ while True:
             else:
                 a += i
         print(a, b)
-        # if a > b:
