@@ -1,15 +1,13 @@
 while True:
-    n = int(input())
-    if n == 0:
+    l = list(map(int, input().split()))
+    if l[0] == 0 and len(l) == 1:
         break
-    for i in range(n):
-        l = list(map(int, input().split()))
-        l.sort(reverse=True)
-        a = 0
-        b = 0
-        for i in l:
-            if a > b:
-                b += i
-            else:
-                a += i
-        print(a, b)
+    l.sort(reverse=True)
+    a = 0
+    b = 0
+    for i in l:
+        if a > b:
+            b += i
+        else:
+            a += i
+    print(a, b)
