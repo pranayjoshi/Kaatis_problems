@@ -11,5 +11,5 @@ while True:
             dp[j] = dp[j] or dp[j - i]
     for i in range(total_sum // 2, -1, -1):
         if dp[i]:
-            print(i, total_sum - i)
+            print(total_sum - i, i)
             break
