@@ -14,6 +14,13 @@ int main() {
     for (int i = 0; i < q; i++) {
         int a, b;
         cin >> a, b;
+        if (a == 1){
+            arr[b] = 1 - arr[b];
+        }
+        else if (a == 2) {
+            
+        }
     }
-    
+
+
 }
