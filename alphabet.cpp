@@ -1,26 +1,18 @@
 #include <iostream>
+#include <vector>
+#include <algorithm>
 
 using namespace std;
 
-int main(){
-    string n;
-    cin >> n;
-    unordered_map<char, int> m;
-    int count = 0;
-    for (int i = 0; i < 26; i++) {
-        m['a' + i] = 0;
+int main() {
+    string s;
+    cin >> s;
+    vector<int> dp(26, 0);
+    int max_len = 0;
+    for (char c : s) {
+        dp[c - 'a'] = *max_element(dp.begin(), dp.begin() + (c - 'a')) + 1;
+        max_len = max(max_len, dp[c - 'a']);
     }
-    for (int i = 0; i < n.size(); i++) {
-        m[n[i]]++;
-    }
-    for (int i = 0; i < 26; i++) {
-        if (m['a' + i] == 0) {
-            count++;
-        }
-        if (m['a' + i] > 1) {
-            count+= m['a' + i] - 1;
-        }
-    }
-    cout << count << endl;
-
+    cout << 26 - max_len << endl;
+    return 0;
 }
