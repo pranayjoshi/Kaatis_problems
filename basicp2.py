@@ -24,7 +24,7 @@ elif b == 3:
     diff = {}
     s = True
     for i in lst:
-        if i in lst: diff[i]+=1
+        if i in diff: diff[i]+=1
         else: diff[i]=1
             
         if diff[i] > len(lst)/2:
@@ -34,10 +34,10 @@ elif b == 3:
     if s: print(-1)
 elif b == 4:
     lst.sort()
-    if (len(A)%2==0): print(A[len(A)/2]-1, A[len(A)/2])
-    else: print(A[len(A)/2])
-if b == 5:
+    if (len(lst)%2==0): print(lst[len(lst)//2-1], lst[len(lst)//2])
+    else: print(lst[len(lst)//2])
+elif b == 5:
     lst.sort()
-    aj = []
     for i in lst:
         if 100 <= i <= 999: print(i, end=" ")
+    print()
