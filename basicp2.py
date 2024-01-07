@@ -16,16 +16,18 @@ elif b == 2:
     for i in lst:
         if i in diff:
             s = False
-            print("Unique")
+            print("Contains duplicate")
             break
         diff.append(i)
-    if s: print("Contains duplicate")
+    if s: print("Unique")
 elif b == 3:
     diff = {}
     s = True
     for i in lst:
-        diff[i]+=1
-        if diff[i] > len(lst/2):
+        if i in lst: diff[i]+=1
+        else: diff[i]=1
+            
+        if diff[i] > len(lst)/2:
             s = False
             print(i)
             break
@@ -39,13 +41,3 @@ if b == 5:
     aj = []
     for i in lst:
         if 100 <= i <= 999: print(i, end=" ")
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
