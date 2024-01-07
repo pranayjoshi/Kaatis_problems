@@ -6,7 +6,6 @@ int main(){
     string n;
     cin >> n;
     unordered_map<char, int> m;
-    // add all alphabet to map
     int count = 0;
     for (int i = 0; i < 26; i++) {
         m['a' + i] = 0;
