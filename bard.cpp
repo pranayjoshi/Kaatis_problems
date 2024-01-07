@@ -14,6 +14,7 @@ int main(){
         vector<int> v;
         for (int i = 0; i < x; i++) {
             cin >> v[i];
+            
         }
         map[x] = i;
     }
