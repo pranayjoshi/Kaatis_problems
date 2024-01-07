@@ -5,5 +5,5 @@ for i in range(5):
     sum = a+b+c+d
     if max < sum:
         max = sum
-        maxi = i
+        maxi = i+1
 print(maxi, max)
