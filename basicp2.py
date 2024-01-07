@@ -35,15 +35,6 @@ elif b == 4:
     else: print(A[len(A)/2])
 if b == 5:
     lst.sort()
+    aj = []
     for i in lst:
-        if 100 <= i <= 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+        if 100 <= i <= 999: print(i, end=" ")
