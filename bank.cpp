@@ -11,7 +11,17 @@ int main(){
         int ci, ti;
         cin >> ci >> ti;
         if (ti <= b) {
-            map[ti] <
+            map[ti] < ci ? map[ti] = ci : map[ti] = map[ti];
+        }
+        else {
+            for (int i = b-1; i <=0; i--) {
+                map[i] < ci ? map[i] = ci : map[i] = map[i];
+            }
         }
     }
+    int sum = 0;
+    for (int i = 0; i < b; i++) {
+        sum += map[i];
+    }
+    cout << sum << endl;
 }
