@@ -1,6 +1,13 @@
 a, b = map(int, input().split())
-if a > 26 * b: print("impossible")
+if b < a or b > 26 * a:
+    print("impossible")
 else:
-    num_a = a - (b //26)
-    result = 'a' * num_a + 'z' * (b // 26)
-    print(result)
+    result = []
+    while a > 0:
+        for i in range(26, 0, -1):
+            if b - i >= a - 1:
+                result.append(chr(i + 96))
+                b -= i
+                break
+        a -= 1
+    print(''.join(result))
