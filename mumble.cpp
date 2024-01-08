@@ -7,7 +7,7 @@ int main() {
     int a;
     cin >> a;
     string b;
-    getline(cin, b);
+    cin >> b;
     string tmp = "";
     int max = 0;
     for (char i : b) {
