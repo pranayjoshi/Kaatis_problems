@@ -11,7 +11,7 @@ int main(){
     for (int i = 0; i < a; i++) {
         int ci, ti;
         cin >> ci >> ti;
-        if (ti <= b) {
+        if (ti < b) {
             map[ti] < ci ? map[ti] = ci : map[ti] = map[ti];
         }
         else {
