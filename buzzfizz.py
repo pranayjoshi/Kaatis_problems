@@ -9,7 +9,8 @@ if c == 0 or d == 0:
 else:
     g = lcm(c, d)
 
-    co = (b - a+1) // g
-    if (a%g and b%g==0): co+=1
+    co = (b - a) // g
+    if (a%g==0): co+=1
+    if (b%g==0): co+=1
 
     print(co)
