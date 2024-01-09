@@ -10,7 +10,6 @@ else:
     g = lcm(c, d)
 
     co = (b - a) // g
-    if (a%g==0): co+=1
-    if (b%g==0): co+=1
+    if (a%g==0 or b%g==0): co+=1
 
     print(co)
