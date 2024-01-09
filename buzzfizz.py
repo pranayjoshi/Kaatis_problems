@@ -9,6 +9,6 @@ else:
     g = math.lcm(c, d)
 
     co = (b - a+1) // g
-    if (a%g and b%g): co+=1
+    if (a%g==0 and b%g==0): co+=1
 
     print(co)
