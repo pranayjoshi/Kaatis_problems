@@ -1,14 +1,9 @@
 for _ in range(int(input())):
-    a = {}
+    a = []
     s = int(input())
-    for _ in range(s): 
-        num = input() 
-        if num not in a:
-            a[num] = 1
-        else:
-            a[num] += 1
-    count = 0
-    for val in a.values(): 
-        if val == 1:
-            count += 1
+    for _ in range(s):  
+        j = input()
+        s.append(j)
+    a = set(a)
+    count = len(a)
     print(count)
