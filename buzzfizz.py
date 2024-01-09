@@ -8,8 +8,6 @@ if c == 0 or d == 0:
 else:
     g = math.lcm(c, d)
 
-    for i in range(a, b + 1):
-        if i % g == 0:
-            co += 1
+    co = b - a / g
 
     print(co)
