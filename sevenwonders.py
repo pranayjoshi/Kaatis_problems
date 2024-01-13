@@ -1,0 +1,6 @@
+a = input()
+t = a.count("T")
+g = a.count("G")
+c = a.count("C")
+i = min(t,g,c)
+print(t**2+g**2+c**2+(7*i))
