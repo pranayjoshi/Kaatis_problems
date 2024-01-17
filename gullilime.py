@@ -9,8 +9,8 @@ gm = g
 am = a
 for i in range(1,len(str)):
     if str[i] == 'G': g += 1
-    elif str[i] == 'A': a += 1
+    elif str[i] == 'A': a += 1 
     if (g-a) > gm:
-        gm = g-a
+        gm = g
         am = a
-print(gm, am)
+print(str(gm)+"-"+str(am))
