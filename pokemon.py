@@ -1,8 +1,10 @@
 a = input()
 s = input()
 st = ""
-for i in range(len(a)):
-    a = int(st[i:i+3])
-    print(a)
-    st += s[a]
+i =0
+while i < len(s):
+    ai = int(s[i:i+3])
+    i+=3
+    print(ai)
+    st += a[ai]
 print(st)
