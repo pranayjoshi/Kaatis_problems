@@ -1,4 +1,4 @@
-a = int(input())
+n = int(input())
 st = input()
 st = st[::-1]
 g = 0
@@ -10,7 +10,7 @@ am = a
 for i in range(1,len(st)):
     if st[i] == 'G': g += 1
     elif st[i] == 'A': a += 1 
-    if a != 0 and am != 0 and ((g-a)/a) > (gm-am)/am:
+    if a + g != 0 and ((g - a) / (a + g)) > ((gm - am) / (am + gm)):
         gm = g
         am = a
 print(str(gm)+"-"+str(am))
