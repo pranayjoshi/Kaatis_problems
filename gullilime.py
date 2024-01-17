@@ -10,7 +10,7 @@ am = a
 for i in range(1,len(st)):
     if st[i] == 'G': g += 1
     elif st[i] == 'A': a += 1 
-    if a != 0 and ((g-a)/a) > (gm-am)/am:
+    if a != 0 and am != 0 and ((g-a)/a) > (gm-am)/am:
         gm = g
         am = a
 print(str(gm)+"-"+str(am))
