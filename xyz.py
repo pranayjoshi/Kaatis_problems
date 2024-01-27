@@ -10,6 +10,7 @@ for i in range(17):
         print(lst)
         for j in range(len(lst)):
             if lst[j][1].isalpha():
-                str = lst[j][1].upper()+ str(dict[j]) +str(i//2+1)
-                black.append(str)
+                if j == 0: continue
+                stro = lst[j][1].upper()+ str(dict[j]) +str(i//2+1)
+                black.append(stro)
         print(black)
